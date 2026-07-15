@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eighty8 vision</title>
+<meta name="description" content="eighty8 vision is a practice in two parts: Business Advisory for women entrepreneurs and Intuitive Guidance.">
+<meta name="author" content="Emily Hale">
+
+<meta property="og:title" content="eighty8 vision">
+<meta property="og:description" content="A practice in two parts: Business Advisory for women entrepreneurs and Intuitive Guidance.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="eighty8 vision">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FAF8F4'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-size='18' font-weight='bold' fill='%236B5D4F' text-anchor='middle'%3E88%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2B2926;
+    --body: #4A463F;
+    --muted: #8A8478;
+    --line: #D9D3C7;
+    --accent: #6B5D4F;
+    --pagebg: #FAF8F4;
+    --descbg: #EDE8DC;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-padding-top: 160px; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--pagebg);
+    color: var(--body);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* UMBRELLA NAV (top layer) */
+  .section-nav {
+    background: var(--ink);
+    padding: 10px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 101;
+  }
+  .section-nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .section-nav a {
+    font-size: 12px;
+    color: var(--pagebg);
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    cursor: pointer;
+  }
+  .section-nav a:hover { opacity: 1; }
+  .section-nav a.active { opacity: 1; font-weight: 500; }
+
+  /* SECTION-LEVEL NAV (now top-level) */
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--pagebg);
+    border-bottom: 1px solid var(--line);
+    z-index: 100;
+    padding: 16px 24px;
+  }
+  nav .nav-inner { max-width: 760px; margin: 0 auto; }
+  nav .brand-row {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  nav .brand {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: inline-block;
+  }
+  nav .brand::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+    margin-top: 5px;
+  }
+  nav .switch-link {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav .switch-link:hover { color: var(--ink); }
+  nav .switch-link.hidden { display: none; }
+  nav .switch-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  nav .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    align-items: center;
+  }
+  nav a {
+    font-size: 13px;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+  nav a:hover { color: var(--ink); }
+
+  /* Sub-nav variants (hidden/shown by JS) */
+  .sub-nav-set { display: none; }
+  .sub-nav-set.active { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
+
+  /* CONTAINER */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* MEGA SECTIONS (the umbrella-level divisions) */
+  .mega-section {
+    border-top: 3px solid var(--accent);
+    margin-top: 60px;
+    padding-top: 8px;
+  }
+  .mega-section:first-of-type {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  /* First section inside each mega-section gets tighter top padding */
+  .mega-section > section:first-of-type {
+    padding-top: 24px;
+  }
+  .mega-section:first-of-type > section:first-of-type {
+    padding-top: 80px;
+  }
+  .mega-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  section {
+    padding: 80px 0 60px;
+    border-bottom: 1px solid var(--line);
+  }
+  section.no-border { border-bottom: none; }
+
+  /* TYPOGRAPHY */
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.2;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  #umbrella h1 {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+  @media (max-width: 600px) {
+    #umbrella h1 { font-size: 38px; }
+  }
+  h2 {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.25;
+    color: var(--accent);
+    margin: 40px 0 20px;
+  }
+  h3 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    margin: 32px 0 12px;
+  }
+  h4 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    margin: 24px 0 8px;
+  }
+
+  .accent-line {
+    width: 60px;
+    height: 1px;
+    background: var(--accent);
+    margin: 0 0 32px;
+  }
+
+  p { margin: 0 0 16px; color: var(--body); }
+
+  .lead {
+    font-size: 18px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  strong, .bold { color: var(--ink); font-weight: 700; }
+  em { color: var(--ink); font-style: italic; }
+
+  ul {
+    margin: 0 0 16px;
+    padding-left: 22px;
+    color: var(--body);
+  }
+  ul li { margin-bottom: 8px; }
+
+  .divider { height: 1px; background: var(--line); margin: 40px 0; border: none; }
+
+  /* Umbrella landing - fills viewport, content centered */
+  #umbrella {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* Start Here sections fill viewport so next section doesn't peek through */
+  #ba-start {
+    min-height: calc(100vh - 70px);
+  }
+  
+  /* Section buttons on umbrella landing */
+  .section-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 48px 0;
+  }
+  .section-button {
+    padding: 48px 36px;
+    border: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--body);
+    transition: border-color 0.2s, background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+  }
+  .section-button:hover { border-color: var(--accent); background: var(--descbg); }
+  .section-button .card-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .section-button h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: var(--accent);
+    margin: 0 0 24px 0;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .section-button .arrow {
+    margin-top: auto;
+    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .section-button .def-inside {
+    font-size: 11px;
+    line-height: 1.65;
+    color: var(--muted);
+    opacity: 0.85;
+    margin: 0 0 24px;
+    flex: 1;
+    letter-spacing: 0.3px;
+  }
+  @media (max-width: 600px) {
+    .section-buttons { grid-template-columns: 1fr; }
+    .section-button { min-height: 180px; padding: 36px 28px; }
+    .section-button h3 { font-size: 22px; }
+  }
+
+  /* Tagline below buttons */
+  .tagline-wrap {
+    margin-top: 40px;
+    text-align: center;
+  }
+  /* Bracketed style */
+  .tagline-bracketed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .tagline-bracketed .line {
+    width: 40px;
+    height: 1px;
+    background: var(--line);
+  }
+  .tagline-bracketed .text {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--muted);
+    letter-spacing: 0.3px;
+  }
+  /* Masthead style */
+  .tagline-masthead {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  /* About context: bolder weight */
+  .about-intro .tagline-masthead {
+    font-weight: 500;
+  }
+  /* Bio pullquote: Montserrat 16px accent, plain by default */
+  .bio-pullquote {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--accent);
+    margin: 24px 0;
+  }
+  /* Border variant for lead greeting */
+  .bio-pullquote.lead {
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+  }
+  /* Inline dash bookend for pullquote sentences */
+  .bio-pullquote .inline-rule {
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+    vertical-align: middle;
+    margin: 0 10px;
+  }
+  /* Italic + darker emphasis for key phrases inside pullquotes */
+  .em-italic-underline {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  /* BA statement variant: larger */
+  .tagline-masthead.ba-statement {
+    font-size: 14px;
+  }
+  #ba-about .about-intro > p:not(.bio-pullquote) {
+    margin-top: 16px;
+  }
+  /* BA About: stretch intro column, position Emily here at forehead level, push statement to bottom */
+  #ba-about .about-intro {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 24px;
+  }
+  #ba-about .about-intro > .ba-statement:last-child {
+    margin-top: auto;
+  }
+  /* IG About: match BA layout for equal gaps */
+  #ig-about .about-intro {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 24px;
+  }
+  #ig-about .about-intro > p:not(.bio-pullquote) {
+    margin-top: 16px;
+  }
+  /* IG About: separate the long paragraph from the credentials line */
+  #ig-about .about-intro .tagline-masthead + p {
+    margin-top: 36px;
+  }
+
+  /* About header: portrait left, text column right */
+  .about-header {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    margin: 16px 0 32px;
+    align-items: center;
+  }
+  .about-portrait {
+    width: 260px;
+  }
+  .about-portrait img {
+    width: 100%;
+    display: block;
+  }
+  .about-intro p.lead {
+    margin-top: 0;
+  }
+  @media (max-width: 700px) {
+    .about-header {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .about-portrait {
+      width: 200px;
+      margin: 0 auto;
+    }
+  }
+
+  /* IG Start Here body - slightly larger */
+  .ig-start-body {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--body);
+  }
+  #ig-start .ig-start-body:first-of-type {
+    margin-top: 48px;
+  }
+  @media (max-width: 600px) {
+    .ig-start-body { font-size: 18px; }
+    #ig-start .ig-start-body:first-of-type { margin-top: 32px; }
+  }
+  
+  /* IG Start sticky container - freezes h1 + body copy as a unit */
+  .ig-start-sticky {
+    position: sticky;
+    top: 70px;
+    background: var(--pagebg);
+    z-index: 85;
+    padding: 16px 0 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  @media (max-width: 600px) {
+    .ig-start-sticky { top: 105px; }
+  }
+  
+  /* Booking button - styled like home page section buttons */
+  .booking-button {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 28px;
+    border: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--body);
+    transition: border-color 0.2s, background-color 0.2s;
+    margin: 32px 0;
+    max-width: 360px;
+  }
+  .booking-button:hover {
+    border-color: var(--accent);
+    background: var(--descbg);
+  }
+  .booking-button h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--accent);
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .booking-button .arrow {
+    margin-top: auto;
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  @media (max-width: 600px) {
+    .booking-button { padding: 24px 20px; }
+    .booking-button h3 { font-size: 18px; }
+  }
+  
+  /* Smaller booking button variant - for repeat placements */
+  .booking-button.small {
+    padding: 20px 24px;
+    max-width: 260px;
+    margin: 24px 0;
+  }
+  .booking-button.small h3 {
+    font-size: 17px;
+    margin: 0 0 10px 0;
+  }
+  .booking-button.small .arrow {
+    font-size: 11px;
+  }
+  @media (max-width: 600px) {
+    .booking-button.small { padding: 16px 18px; }
+    .booking-button.small h3 { font-size: 15px; }
+  }
+  
+  /* IG Services - lighter service sub-headers */
+  .service-block {
+    margin-bottom: 48px;
+  }
+  .service-block:last-child {
+    margin-bottom: 0;
+  }
+  .service-sub-header {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: var(--accent);
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+  }
+  @media (max-width: 600px) {
+    .service-sub-header { font-size: 22px; }
+    .service-block { margin-bottom: 36px; }
+  }
+  
+  /* Condensed indented service list - IG */
+  .service-list {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 32px;
+    border-left: 1px solid var(--line);
+  }
+  .service-item {
+    margin-bottom: 28px;
+  }
+  .service-item:last-child {
+    margin-bottom: 0;
+  }
+  .service-item-header {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--accent);
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+  .service-item p {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .service-item p:last-child {
+    margin-bottom: 0;
+  }
+  @media (max-width: 600px) {
+    .service-list { padding-left: 16px; margin-top: 32px; margin-bottom: 32px; }
+    .service-item { margin-bottom: 24px; }
+    .service-item-header { font-size: 18px; }
+    .service-item p { font-size: 14px; }
+  }
+  
+  /* Additional Offerings block */
+  .additional-offerings {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  .additional-offerings-header {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--accent);
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+  }
+  .additional-offerings p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .mailto-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .mailto-link:hover {
+    border-bottom-color: var(--accent);
+  }
+  @media (max-width: 600px) {
+    .additional-offerings { margin-top: 40px; padding-top: 24px; }
+    .additional-offerings-header { font-size: 20px; }
+    .additional-offerings p { font-size: 14px; }
+  }
+
+  /* Section footer note - editorial aside with top border */
+  .section-footer-note {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .section-footer-note p {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  /* IG Services intro sticky - freezes h1 + intro + pricing + button as a unit */
+  .ig-services-intro-sticky {
+    position: sticky;
+    top: 70px;
+    background: var(--pagebg);
+    z-index: 85;
+    border-bottom: 1px solid var(--line);
+  }
+  @media (max-width: 600px) {
+    .ig-services-intro-sticky { top: 105px; }
+  }
+  
+  /* HOME H1 SIZE */
+  .home-h1 { font-size: 28px; line-height: 1.2; }
+  @media (min-width: 700px) { .home-h1 { font-size: 32px; } }
+  
+  /* Business Advisory headline - sized to fit one line */
+  #ba-start h1 { font-size: 28px; line-height: 1.2; }
+  @media (min-width: 700px) { #ba-start h1 { font-size: 28px; } }
+  @media (max-width: 600px) { #ba-start h1 { font-size: 22px; } }
+
+  /* INDENT */
+  .indent-sub { padding-left: 32px; }
+  @media (max-width: 700px) { .indent-sub { padding-left: 16px; } }
+
+  /* MODEL LINES */
+  .model-line {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--accent);
+    padding-left: 32px;
+    line-height: 1.6;
+  }
+
+  /* AXIOM */
+  .axiom {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--accent);
+    line-height: 1.7;
+    margin: 24px 0;
+  }
+
+  /* SERVICES */
+  .services-wrapper { position: relative; }
+  /* Advisory Services: tighter spacing */
+  #business-evaluation > h1, #advisory-services > h1 { font-size: 28px; }
+  #advisory-services p { margin: 8px 0; }
+  #advisory-services .service-list { margin-top: 16px; margin-bottom: 16px; }
+  #advisory-services .service-list ul { margin: 6px 0; padding-left: 18px; }
+  #advisory-services .service-list li { margin-bottom: 2px; font-size: 15px; line-height: 1.45; }
+  #advisory-services .service-item { margin-bottom: 20px; }
+
+  .services-sticky-nav-container {
+    position: sticky;
+    top: 70px;
+    background: var(--pagebg);
+    z-index: 90;
+    padding: 24px 0 16px;
+    border-bottom: 1px solid var(--line);
+    margin: 0 auto;
+    max-width: 760px;
+  }
+  .services-sticky-nav-container h1 {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: var(--accent);
+    margin: 0 0 16px 0;
+    padding: 0 24px;
+    line-height: 1.2;
+  }
+  .service-cards-sticky {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 24px;
+  }
+  .card-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+    min-width: 30px;
+    max-width: 140px;
+  }
+  .service-card-mini {
+    padding: 16px 24px;
+    border: 1px solid var(--line);
+    text-decoration: none;
+    text-align: center;
+    transition: border-color 0.2s, background-color 0.2s;
+    min-width: 180px;
+  }
+  .service-card-mini:hover { border-color: var(--accent); background: var(--descbg); }
+  .service-card-mini .service-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  @media (max-width: 700px) {
+    .service-cards-sticky { flex-direction: column; gap: 8px; }
+    .card-line { display: none; }
+    .service-card-mini { padding: 10px 12px; width: 100%; }
+    .services-sticky-nav-container { top: 105px; padding: 16px 0 12px; }
+    .services-sticky-nav-container h1 { font-size: 28px; margin-bottom: 12px; }
+  }
+
+  /* Service phrases (intuitive guidance) */
+  .service-phrases {
+    margin: 20px 0 8px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .service-phrases .phrase {
+    font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--accent);
+    margin: 0 0 6px;
+    line-height: 1.4;
+  }
+  .service-phrases .phrase:last-child { margin-bottom: 0; }
+  .service-phrases .phrase.quoted { color: var(--muted); }
+
+  /* Sticky header sections */
+  .sticky-header-section { position: relative; }
+  .sticky-header-section h1 {
+    position: sticky;
+    top: 70px;
+    background: var(--pagebg);
+    z-index: 85;
+    padding: 16px 0 12px;
+    margin: 0 0 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .sticky-header-section .accent-line { display: none; }
+  
+  /* Section eyebrow that pins above the h1 as a sticky pair */
+  .section-eyebrow {
+    position: sticky;
+    top: 70px;
+    background: var(--pagebg);
+    z-index: 86;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 12px 0 0;
+    margin: 0;
+    font-weight: 500;
+  }
+  .sticky-header-section .section-eyebrow {
+    top: 70px;
+  }
+  /* When section-eyebrow is above a sticky h1, shift the h1 down to sit below the eyebrow */
+  .sticky-header-section .section-eyebrow + h1 {
+    top: 96px;
+    padding-top: 4px;
+  }
+  @media (max-width: 600px) {
+    .sticky-header-section h1 { top: 105px; padding: 12px 0 8px; }
+    .section-eyebrow { top: 105px; }
+    .sticky-header-section .section-eyebrow + h1 { top: 128px; }
+  }
+
+  /* BUSINESS EVAL */
+  .investment-block {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: var(--descbg);
+    display: inline-block;
+  }
+  .investment-block .price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .investment-block .accessible-note {
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 16px;
+    color: var(--body);
+  }
+
+  /* Stage cards - condensed indented list */
+  .stages-list {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 32px;
+    border-left: 1px solid var(--line);
+  }
+  .stage-compressed {
+    margin: 0 0 28px 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .stage-compressed:last-child {
+    margin-bottom: 0;
+  }
+  .stage-compressed .stage-label-compressed {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2px;
+  }
+  .stage-compressed .stage-name-compressed {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .stage-compressed p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--body);
+    margin: 0 0 8px 0;
+  }
+  .stage-compressed p:last-child {
+    margin-bottom: 0;
+  }
+  .stage-compressed br {
+    display: none;
+  }
+  @media (max-width: 600px) {
+    .stages-list { padding-left: 16px; margin-top: 32px; }
+    .stage-compressed { margin-bottom: 24px; }
+    .stage-compressed .stage-name-compressed { font-size: 17px; }
+    .stage-compressed p { font-size: 14px; }
+  }
+
+  /* Framework spacing */
+  #framework p { margin-bottom: 12px; }
+  #framework h3 { margin-top: 20px; margin-bottom: 6px; }
+  #framework .indent-sub { margin-bottom: 8px; }
+
+  /* Business eval styling */
+  #business-evaluation h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--accent);
+    margin: 24px 0 8px;
+  }
+  /* Exempt the booking button from #business-evaluation h3 override */
+  #business-evaluation a.booking-button h3 {
+    font-size: 22px;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  #business-evaluation .eval-content { padding-left: 24px; margin-bottom: 16px; }
+  #business-evaluation .eval-content p { margin-bottom: 8px; padding-left: 32px; }
+  #business-evaluation .eval-content ul { padding-left: 56px; margin-bottom: 8px; }
+  #business-evaluation p { margin-bottom: 12px; }
+  #business-evaluation h2 { margin: 24px 0 12px; }
+  #business-evaluation h3 { margin: 16px 0 4px; }
+  #business-evaluation .eval-content { margin-bottom: 12px; }
+  #business-evaluation .eval-content p { margin-bottom: 6px; }
+  #business-evaluation ul { margin-bottom: 6px; }
+  #business-evaluation ul li { margin-bottom: 4px; }
+  
+  /* Investment block at bottom of Business Evaluation */
+  .investment-line {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .investment-line .investment-row {
+    margin-bottom: 8px;
+  }
+  .investment-line .investment-label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .investment-line .investment-price {
+    font-size: 16px;
+    color: var(--ink);
+    margin-left: 8px;
+  }
+  .investment-line .accessible-note {
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* FAQ */
+  .faq-item { margin-bottom: 28px; }
+  .faq-item .question {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .faq-item .answer { font-size: 15px; color: var(--body); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* STICKY BOTTOM BAR */
+  .bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--pagebg);
+    border-top: 1px solid var(--line);
+    z-index: 100;
+    padding: 11px 24px;
+  }
+  .bottom-bar-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+  }
+  .bottom-bar-brand {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .bottom-bar-tagline {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .bottom-bar-brand a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .bottom-bar-brand a:hover { color: var(--accent); }
+  .bottom-bar-socials {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-self: end;
+  }
+  .bottom-bar-socials a {
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s;
+  }
+  .bottom-bar-socials a:hover { color: var(--accent); }
+  .bottom-bar-socials svg {
+    width: 19px;
+    height: 19px;
+    display: block;
+  }
+  /* Body padding to prevent bottom bar from covering content */
+  body {
+    padding-bottom: 52px;
+  }
+  @media (max-width: 700px) {
+    .bottom-bar-inner { grid-template-columns: 1fr auto; }
+    .bottom-bar-tagline { display: none; }
+  }
+  @media (max-width: 600px) {
+    .bottom-bar { padding: 8px 16px; }
+    .bottom-bar-brand { font-size: 9px; letter-spacing: 1.5px; }
+    body { padding-bottom: 40px; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 22px; }
+    nav .nav-inner { font-size: 12px; }
+    nav a { font-size: 12px; }
+    section { padding: 56px 0 40px; }
+    .lead { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SECTION-LEVEL NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="brand-row">
+      <span class="brand" id="brand-label">EIGHTY8 VISION</span>
+      <div class="switch-links">
+        <a href="#umbrella" id="home-link" class="switch-link hidden">Home</a>
+        <a href="#" id="switch-link" class="switch-link hidden">Go to <span id="switch-target"></span> &rarr;</a>
+      </div>
+    </div>
+    <!-- Umbrella sub-nav -->
+    <div class="sub-nav-set active" data-set="umbrella">
+    </div>
+    <!-- Business Advisory sub-nav -->
+    <div class="sub-nav-set" data-set="business-advisory">
+      <a href="#ba-start">Start Here</a>
+      <a href="#ba-about">About</a>
+      <a href="#framework">The Framework</a>
+      <a href="#stages">5 Stages of Business Development</a>
+      <a href="#services">Services</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <!-- Intuitive Guidance sub-nav -->
+    <div class="sub-nav-set" data-set="intuitive-guidance">
+      <a href="#ig-about">About</a>
+      <a href="#ig-services">Services</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============================ -->
+<!-- MEGA-SECTION: UMBRELLA -->
+<!-- ============================ -->
+<div class="mega-section" id="mega-umbrella" data-mega="umbrella">
+
+<section id="umbrella" class="no-border">
+  <h1>eighty8 vision</h1>
+  <div class="accent-line"></div>
+
+  <div class="section-buttons">
+    <a href="#ba-start" class="section-button">
+      <h3>Business Advisory</h3>
+      <div class="def-inside">For women entrepreneurs.<br>Operationally sound. Energetically aligned.</div>
+      <div class="arrow">Enter &#8594;</div>
+    </a>
+    <a href="#ig-about" class="section-button">
+      <h3>Intuitive Guidance</h3>
+      <div class="def-inside">For people looking to better understand themselves, others, and their experiences.</div>
+      <div class="arrow">Enter &#8594;</div>
+    </a>
+  </div>
+
+  <div class="tagline-wrap">
+    <div class="tagline-masthead">Your most valuable asset is your energy</div>
+  </div>
+</section>
+
+</div>
+
+
+<!-- ============================ -->
+<!-- MEGA-SECTION: BUSINESS ADVISORY -->
+<!-- ============================ -->
+<div class="mega-section" id="mega-business-advisory" data-mega="business-advisory">
+
+<!-- BA START HERE -->
+<section id="ba-start" class="sticky-header-section">
+  <div class="section-eyebrow">BUSINESS ADVISORY</div>
+  <h1 class="home-h1">For Women Entrepreneurs</h1>
+  <div class="accent-line"></div>
+
+  <p>Women-owned businesses are increasing in number but declining in their share of total revenue. In 2025, women owned 41.8% of all privately held U.S. businesses, yet generated only 12.5% of all privately held revenue, down from 13.9% the year prior.</p>
+
+  <p>Between 2022 and 2025, women-owned businesses grew nearly twice as fast as men-owned businesses, yet only ~9% of women-owned businesses have employees. Those ~9% generate ~82% of all women-owned revenue.</p>
+
+  <p>The question is not whether women-owned businesses are capable of claiming their proportionate share of the market.</p>
+
+  <p>The question is what is actually limiting them.</p>
+
+  <div class="section-footer-note">
+    <p>By women, I'm referring to anyone who identifies as a woman or as nonbinary, navigating business in a world that was not designed for them to thrive and succeed.</p>
+  </div>
+</section>
+
+<!-- BA ABOUT -->
+<section id="ba-about" class="sticky-header-section">
+  <div class="section-eyebrow">BUSINESS ADVISORY</div>
+  <h1>About</h1>
+  <div class="accent-line"></div>
+
+  <div class="about-header">
+    <div class="about-portrait">
+      <img src="emily_portrait.jpg" alt="Emily">
+    </div>
+    <div class="about-intro">
+      <p class="bio-pullquote lead">Emily here.</p>
+      <p>Choice, freedom, and financial independence change how women live, work, and influence the world around them. I believe in defining what you actually want your life to look like and building your business accordingly.</p>
+      <p class="bio-pullquote"><span class="inline-rule"></span>Your business should support your life, not the other way around<span class="inline-rule"></span></p>
+    </div>
+  </div>
+
+  <p>Before starting eighty8 vision, I spent 15+ years operating inside rapid-growth, owner-led businesses across industries and business models, partnering directly with owners to build, lead, and scale teams, systems, and operational structure.</p>
+
+  <p>From supporting early-stage solo founders building their first teams to playing a key operational leadership role during a four-year scale from ~$30M to ~$250M.</p>
+
+  <p class="bio-pullquote">I speak the <span class="em-italic-underline">language of energy</span> and the <span class="em-italic-underline">language of business</span> fluently and believe understanding them both is what gives business owners <span class="em-italic-underline">leverage</span>.</p>
+
+  <p>Creating eighty8 vision allows me to work directly with women entrepreneurs, optimizing how they operate inside their business and how it is structured by leveraging their energy as their most valuable asset to build a business that is operationally sound and energetically aligned.</p>
+
+  <p>eighty8 vision also includes Intuitive Guidance, offering another way to work together for people looking to better understand themselves, others, and their experiences. Business ownership is not required.</p>
+
+  <p><em>This is a dedicated space for LGBTQIA+ community members, BIPOC individuals, and anyone from a marginalized community. Your identity is honored, celebrated, and protected here.</em></p>
+</section>
+
+<!-- THE FRAMEWORK -->
+<section id="framework" class="sticky-header-section">
+  <div class="section-eyebrow">BUSINESS ADVISORY</div>
+  <h1>The Framework</h1>
+  <div class="accent-line"></div>
+
+  <p>Business ownership creates an unusually interconnected and inescapable relationship between work and personal life.</p>
+
+  <p>For women, the lines blur even further.</p>
+
+  <p>This means building businesses while navigating conditions that don't affect most men the same way: disproportionate caregiving expectations, domestic and emotional labor, and professional environments designed around men's lives, leadership patterns, and definitions of success.</p>
+
+  <p>Most business advice treats the owner and the business as separate.</p>
+
+  <p>They aren't.</p>
+
+  <p>They function as a single ecosystem where personal wellbeing, fulfillment, business achievement, and operational demands all draw from the same resources.</p>
+
+  <div class="service-list">
+    <div class="service-item">
+      <h3 class="service-item-header">Relationship to the Business</h3>
+      <p>How the owner thinks, makes decisions, leads, tolerates pressure, allocates energy, relates to money, identifies with the business, and integrates it into the rest of their life.</p>
+      <p>Most business constraints begin here before they become operational.</p>
+    </div>
+
+    <div class="service-item">
+      <h3 class="service-item-header">Operational Structure</h3>
+      <p>How the business has been built to function through systems, processes, roles, accountability, collaboration, and execution.</p>
+      <p>Structure is the accumulated result of the owner's decisions, omissions, standards, and priorities over time.</p>
+    </div>
+
+    <div class="service-item">
+      <h3 class="service-item-header">5 Stages of Business Development</h3>
+      <p>The predictable stages owner-led businesses move through, each with distinct requirements, constraints, and readiness markers for what comes next.</p>
+      <p>Stages are not defined by revenue, headcount, or years in operation, but by what the business requires structurally and what it requires from the owner in order to sustain and evolve.</p>
+      <p>Structure reflects the owner.</p>
+      <p>Stage changes what is required.</p>
+      <p>Owner evolution determines what becomes possible.</p>
+    </div>
+
+    <div class="service-item">
+      <h3 class="service-item-header">The Result</h3>
+      <p>When structure, stage, and owner evolution align, the business becomes supportive of the life surrounding it.</p>
+      <p>Decisions become clearer. Growth becomes healthier. Operational structure creates stability instead of dependency.</p>
+      <p>The result is a business better equipped to support growth, complexity, and the demands of the owner's life without requiring chronic overextension to sustain it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 STAGES -->
+<section id="stages" class="sticky-header-section">
+  <div class="section-eyebrow">BUSINESS ADVISORY</div>
+  <h1>5 Stages of Business Development</h1>
+  <div class="accent-line"></div>
+
+  <p>The 5 Stages framework is a roadmap of the predictable shifts owner-led businesses move through as they grow in complexity.</p>
+
+  <p>Different stages require fundamentally different operational structures, leadership approaches, decision-making, and relationships between the owner and the business itself.</p>
+
+  <p>What creates growth in one stage often becomes a constraint in the next. The lack of stage-appropriate operational structure and owner evolution early on creates overextension and unnecessary re-work as the business grows.</p>
+
+  <p>The framework helps owners orient, prioritize, focus, and prepare.</p>
+
+  <p>Each stage has an aligned expression, a misaligned expression, and distinct markers of readiness for what comes next.</p>
+
+  <p>Progression is not the goal. Each stage is neutral.</p>
+
+  <div class="stages-list">
+  <div class="stage-compressed">
+    <div class="stage-label-compressed">Stage 1</div>
+    <div class="stage-name-compressed">You Are the Business</div>
+    <p>The owner is every function, every decision, and every process. Revenue is irregular and the business model is still forming. Progress is tied directly to the owner's execution, availability, and capacity. The patterns established here become the foundation the business scales from.</p>
+  </div>
+
+  <div class="stage-compressed">
+    <div class="stage-label-compressed">Stage 2</div>
+    <div class="stage-name-compressed">You Are the Bottleneck</div>
+    <p>The business has outgrown what one person can sustain. Revenue is consistent enough to prove the concept but the owner's capacity is fully consumed by maintaining what exists. The ceiling is no longer the market. The ceiling is the owner.</p>
+  </div>
+
+  <div class="stage-compressed">
+    <div class="stage-label-compressed">Stage 3</div>
+    <div class="stage-name-compressed">You Operate the Business</div>
+    <p>Collaboration becomes necessary. The owner still plays a central role in executing day-to-day work while also managing, delegating, and building processes around themselves.</p>
+    <br>
+    <p>Leadership identity and operational structure become the primary developmental challenges. Opportunities for growth and expansion increase, and the ability to evaluate them against long-term goals, operational realities, and personal capacity becomes critical.</p>
+    <br>
+    <p>Decisions made now determine how the business functions moving forward.</p>
+  </div>
+
+  <div class="stage-compressed">
+    <div class="stage-label-compressed">Stage 4</div>
+    <div class="stage-name-compressed">The Business Operates Without You</div>
+    <p>The business has departments, systems, specialties, and processes that function independently of the owner's daily involvement. The owner's role shifts from executing the work to leading people, systems, and the increasing complexity that comes with scale.</p>
+  </div>
+
+  <div class="stage-compressed">
+    <div class="stage-label-compressed">Stage 5</div>
+    <div class="stage-name-compressed">The Business Evolves Without You</div>
+    <p>The business has its own trajectory, identity, and momentum independent of the owner. The owner's role shifts from building and operating the business to stewarding its long-term direction, sustainability, and impact.</p>
+    <br>
+    <p>The questions at this stage are no longer about how to make the business function, but about how the business continues to fit into the owner's life, priorities, and future.</p>
+  </div>
+  </div>
+</section>
+
+<!-- BA SERVICES -->
+<div class="services-wrapper">
+<div class="services-sticky-nav-container" id="services">
+  <h1>Services</h1>
+  <div class="service-cards-sticky">
+    <div class="card-line"></div>
+    <a href="#business-evaluation" class="service-card-mini">
+      <div class="service-name">Business Evaluation</div>
+    </a>
+    <a href="#advisory-services" class="service-card-mini">
+      <div class="service-name">Advisory Services</div>
+    </a>
+    <div class="card-line"></div>
+  </div>
+</div>
+
+<section id="business-evaluation">
+  <h1>Business Evaluation</h1>
+  <div class="accent-line"></div>
+
+  <p>Most owners are spending time and energy on outcomes without clear visibility into and understanding of the structural, operational, or behavioral patterns creating them.</p>
+
+  <p>The Business Evaluation diagnoses underlying dynamics and distinguishes symptoms from root causes.</p>
+
+  <p>It surfaces where operational structure, stage of development, owner behavior, and stated goals are working against one another. I identify risks, opportunities, constraints, and the patterns shaping the business's current trajectory.</p>
+
+  <p>The evaluation establishes a clear understanding of how the business is operating and identifies the highest-leverage opportunities for change.</p>
+
+  <div class="service-list">
+    <div class="service-item">
+      <h3 class="service-item-header">Intake</h3>
+      <p>You complete a questionnaire before the session. It captures a snapshot of the business, how you operate inside it, and what you want it to support. The intake focuses the session and ensures the time is used efficiently.</p>
+    </div>
+
+    <div class="service-item">
+      <h3 class="service-item-header">Session</h3>
+      <p>90 to 120 minutes. Live, on camera.</p>
+      <p>The session is a structured diagnostic conversation. The intake and my experience determine where the conversation starts, but the direction evolves as I gain a deeper understanding of you and your business.</p>
+      <p>The purpose of the session is information gathering and diagnosis, not live problem-solving. Final findings, conclusions, and recommendations are provided afterward through the written evaluation.</p>
+    </div>
+
+    <div class="service-item">
+      <h3 class="service-item-header">Evaluation</h3>
+      <p>A written evaluation is delivered via email after the session. The document includes:</p>
+      <ul>
+        <li>In-depth evaluation of the business's current stage and whether the operational structure, business model, owner behaviors, and available capacity are aligned with what that stage requires</li>
+        <li>Primary structural, operational, and ownership constraints</li>
+        <li>Your role in those constraints</li>
+        <li>Where current operations conflict with stated goals, available capacity, stage requirements, or next stage readiness</li>
+        <li>Highest-leverage priorities and opportunities and why they matter</li>
+        <li>Risks if nothing changes</li>
+        <li>Recommendation for continued work if appropriate</li>
+      </ul>
+    </div>
+  </div>
+
+  <a href="https://eighty8vision.as.me/" class="booking-button" target="_blank">
+    <h3>Business Evaluation</h3>
+    <div class="arrow">Book &#8594;</div>
+  </a>
+</section>
+
+<section id="advisory-services">
+  <h1>Advisory Services</h1>
+  <div class="accent-line"></div>
+
+  <p>Advisory Services focus on where the greatest impact can be made for your life and your business based on the Business Evaluation.</p>
+
+  <p>Areas of focus may include:</p>
+
+  <div class="service-list">
+    <div class="service-item">
+      <h3 class="service-item-header">Your Business</h3>
+      <ul>
+        <li>Operational structure and process design</li>
+        <li>Support through growing pains</li>
+        <li>Hiring strategy and future hiring planning</li>
+        <li>Employee training and delegation</li>
+        <li>Pricing strategy</li>
+        <li>Business model evolution</li>
+        <li>Customer and client positioning</li>
+      </ul>
+    </div>
+    <div class="service-item">
+      <h3 class="service-item-header">You</h3>
+      <ul>
+        <li>Capacity and energy allocation</li>
+        <li>Confidence and leadership identity</li>
+        <li>Goal setting and strategic direction</li>
+        <li>Personal and professional boundaries</li>
+        <li>Relationship with money and the business itself</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>Advisory Services are highly contextual. There is no standardized approach because no two businesses or owners are the same.</p>
+
+  <p>Scope, structure, and pricing are determined by the nature of the work and the level of support required. Engagements are typically project-based and/or episodic, adapting as you and your business evolve over time.</p>
+</section>
+</div>
+
+<!-- BA ABOUT -->
+<!-- FAQ -->
+<section id="faq" class="sticky-header-section">
+  <div class="section-eyebrow">BUSINESS ADVISORY</div>
+  <h1>Frequently Asked Questions</h1>
+  <div class="accent-line"></div>
+
+  <div class="faq-item">
+    <div class="question">Why do you focus on the owner's relationship with the business?</div>
+    <div class="answer">Most structural issues start there. How you engage with decisions, control, delegation, and your identity inside the business shapes what it can become. Operational problems typically trace back to a relationship pattern that has not evolved with the stage the business is in, or the one it needs to move into next.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">What kinds of problems can I bring to a session?</div>
+    <div class="answer">Anything related to direction, structure, decision making, capacity, growth constraints, or situations where effort and results do not match.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">What if I don't know what to focus on or bring?</div>
+    <div class="answer">That is enough to begin. Clarifying the problem is part of the work. Many clients arrive with a general sense that something is not working and leave with clear language for what is happening and what needs to change.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">How do you determine what structure my business needs at each stage?</div>
+    <div class="answer">Using the 5-stage framework, I assess operational load, decision distribution, and dependency on the owner. Structure is determined by what the business requires to function at its current stage and what it requires to progress without increasing dependency on you.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Can you help me decide whether to grow, maintain, or scale back?</div>
+    <div class="answer">Yes. That decision is a core part of why I do this. Growth is not the default answer. The right direction depends on capacity, alignment with the life you want, and whether your current structure can actually support what you are considering.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Are sessions in person or virtual?</div>
+    <div class="answer">Virtual. Sessions are held on Google Meet, on camera. If you're in the Minneapolis, MN area and want to meet in person, please reach out to me at <a href="mailto:scheduling@eighty8vision.com" style="color: var(--accent);">scheduling@eighty8vision.com</a>.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">What if I only want help with a specific issue?</div>
+    <div class="answer">The Business Evaluation will still address it, but it will be evaluated in the context of your overall business. Specific issues are rarely isolated from the structure or how you are operating inside it.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Do I need to be at a certain stage or revenue level to work with you?</div>
+    <div class="answer">No. I have experience across all stages. My approach shifts based on where your business is operating and what it needs to move forward. A proactive investment is far less costly than a reactive investment. I work with owners across all stages of revenue and business development.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Is there an accessible pricing option?</div>
+    <div class="answer">Yes. An adjusted rate is available for businesses generating under $100,000 in annual revenue. Availability is limited and reserved for a small number of businesses at any given time.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Can I work with you if I don't have a business yet?</div>
+    <div class="answer">Yes. In my ideal world, I'd be working with owners at the beginning of their journey. Building clarity, direction, and foundational structure early prevents patterns that are harder and more costly to unwind once the business is in motion.</div>
+  </div>
+</section>
+
+</div>
+
+
+<!-- ============================ -->
+<!-- MEGA-SECTION: INTUITIVE GUIDANCE -->
+<!-- ============================ -->
+<div class="mega-section" id="mega-intuitive-guidance" data-mega="intuitive-guidance">
+
+<!-- IG ABOUT (now the landing) -->
+<section id="ig-about" class="sticky-header-section">
+  <div class="section-eyebrow">INTUITIVE GUIDANCE</div>
+  <h1>About</h1>
+  <div class="accent-line"></div>
+
+  <div class="about-header">
+    <div class="about-portrait">
+      <img src="emily_portrait.jpg" alt="Emily">
+    </div>
+    <div class="about-intro">
+      <p class="bio-pullquote lead">Emily here.</p>
+      <p class="bio-pullquote">Intuitive &bull; Energy Reader &bull; 5/1 Splenic Projector &bull; Business Advisor</p>
+      <p>For 15+ years, I worked in operations, strategy, and organizational leadership, helping founders and businesses navigate growth, complexity, and change while building high-performing teams.</p>
+    </div>
+  </div>
+
+  <p>Reading energy, perceiving underlying dynamics, and knowing where situations were headed have always driven how I led, advised, and made decisions.</p>
+
+  <p class="bio-pullquote">I help people better understand <span class="em-italic-underline">themselves</span>, <span class="em-italic-underline">others</span>, and their <span class="em-italic-underline">experiences</span>.</p>
+
+  <p>My connection to intuitive knowing and energy is expressed through tarot, astrology, meditation, and ritual. More recently, Human Design has become a language I find valuable for translating energetic insight into practical, usable guidance.</p>
+
+  <p>Whether I'm working with a business owner on their business and their relationship to it, or in an Intuitive Guidance session, the way I operate stays the same.</p>
+
+  <p>I help people better understand themselves, others, and their experiences.</p>
+
+  <p>eighty8 vision includes a Business Advisory practice that works directly with women entrepreneurs to build companies that are energetically aligned, operationally sound, and support the lives they want to create.</p>
+
+  <p><em>This is a dedicated space for LGBTQIA+ community members, BIPOC individuals, and anyone from a marginalized community. Your identity is honored, celebrated, and protected here.</em></p>
+</section>
+
+<!-- IG SERVICES -->
+<section id="ig-services" class="sticky-header-section">
+  <div class="section-eyebrow">INTUITIVE GUIDANCE</div>
+  <h1>Services</h1>
+  <div class="accent-line"></div>
+  
+  <p>Sessions are organized by your relationship to the topic you bring. Choose the one that best reflects where you are today.</p>
+  
+  <p>These are <em style="color: var(--accent);">active</em> sessions intended to <em style="color: var(--accent);">move energy</em>. The goal is a deeper trust in your own knowing.</p>
+  
+  <p>Each begins with a questionnaire completed at the time of booking. I review and feel into your responses before we meet, helping guide our work together.</p>
+  
+  <p>60 to 90 minutes. Live, on camera.</p>
+  
+  <div class="service-list">
+    <div class="service-item">
+      <h3 class="service-item-header">Discovery Session</h3>
+      <p>For uncertainty, transition, exploration, or confusion in an area of your life. A situation, a relationship, a career transition, a recurring pattern, or a hard time organizing your thoughts. We'll work toward greater understanding, perspective, and language.</p>
+    </div>
+    
+    <div class="service-item">
+      <h3 class="service-item-header">Decision Session</h3>
+      <p>You have a choice to make and want additional perspective to feel more confident, clear, and aligned. We'll explore the options, motivations, tradeoffs, consequences, unseen influences, and likely trajectories.</p>
+    </div>
+    
+    <div class="service-item">
+      <h3 class="service-item-header">Challenge Session</h3>
+      <p>An idea, plan, strategy, belief, assumption, or decision that needs a pressure test or rigorous examination. Bring me your thinking. I'll identify blind spots, weaknesses, overlooked variables, contradictions, risks, and alternative perspectives.</p>
+      <p>If your thinking holds, you'll leave with greater confidence. If something important has been missed, we'll find it before reality does.</p>
+    </div>
+  </div>
+  
+  <a href="https://eighty8vision.as.me/" class="booking-button" target="_blank">
+    <h3>Intuitive Guidance</h3>
+    <div class="arrow">Book &#8594;</div>
+  </a>
+  
+  <div class="additional-offerings">
+    <h2 class="additional-offerings-header">Additional Offerings</h2>
+    <p>I also work with small groups (2&ndash;5 people) looking to better understand each other, navigate a difficult conversation, or work through a shared decision.</p>
+    <p>Contact me to learn more. <a href="mailto:scheduling@eighty8vision.com" class="mailto-link">scheduling@eighty8vision.com</a></p>
+  </div>
+</section>
+
+</div>
+
+</main>
+
+<div class="bottom-bar">
+  <div class="bottom-bar-inner">
+    <div></div>
+    <div class="bottom-bar-tagline">Your most valuable asset is your energy</div>
+    <div class="bottom-bar-socials">
+      <a href="mailto:scheduling@eighty8vision.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <polyline points="2,7 12,13 22,7"/>
+        </svg>
+      </a>
+      <a href="https://eighty8vision.as.me/" target="_blank" rel="noopener" aria-label="Book a session">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </a>
+      <a href="https://instagram.com/eighty8.vision" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+// Sub-nav swapping based on which mega-section is in view
+(function() {
+  const megaSections = document.querySelectorAll('.mega-section');
+  const subNavSets = document.querySelectorAll('.sub-nav-set');
+  const brandLabel = document.getElementById('brand-label');
+  const switchLink = document.getElementById('switch-link');
+  const switchTarget = document.getElementById('switch-target');
+  const homeLink = document.getElementById('home-link');
+  
+  const brandLabels = {
+    'umbrella': 'EIGHTY8 VISION',
+    'business-advisory': 'EIGHTY8 VISION \u00B7 BUSINESS ADVISORY',
+    'intuitive-guidance': 'EIGHTY8 VISION \u00B7 INTUITIVE GUIDANCE'
+  };
+  
+  // When you're in one section, the switch link points to the OTHER one
+  const switchTargets = {
+    'business-advisory': { label: 'Intuitive Guidance', href: '#ig-about' },
+    'intuitive-guidance': { label: 'Business Advisory', href: '#ba-start' }
+  };
+  
+  function setActiveMega(mega) {
+    // Update sub-nav
+    subNavSets.forEach(set => {
+      if (set.dataset.set === mega) {
+        set.classList.add('active');
+      } else {
+        set.classList.remove('active');
+      }
+    });
+    // Update brand label
+    if (brandLabels[mega]) {
+      brandLabel.textContent = brandLabels[mega];
+    }
+    // Show/hide switch links based on section
+    if (mega === 'umbrella') {
+      switchLink.classList.add('hidden');
+      homeLink.classList.add('hidden');
+    } else {
+      switchLink.classList.remove('hidden');
+      homeLink.classList.remove('hidden');
+      const target = switchTargets[mega];
+      if (target) {
+        switchTarget.textContent = target.label;
+        switchLink.setAttribute('href', target.href);
+      }
+    }
+  }
+  
+  function updateActiveSection() {
+    const triggerLine = 200;
+    let currentMega = 'umbrella';
+    
+    megaSections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= triggerLine) {
+        currentMega = section.dataset.mega;
+      }
+    });
+    
+    setActiveMega(currentMega);
+  }
+  
+  window.addEventListener('scroll', updateActiveSection, { passive: true });
+  updateActiveSection();
+  window.addEventListener('hashchange', () => {
+    setTimeout(updateActiveSection, 100);
+  });
+})();
+</script>
+
+</body>
+</html>
