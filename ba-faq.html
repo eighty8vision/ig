@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eighty8 vision</title>
+<meta name="description" content="eighty8 vision is a practice in two parts: Business Advisory for women entrepreneurs and Intuitive Guidance.">
+<meta name="author" content="Emily Hale">
+
+<meta property="og:title" content="eighty8 vision">
+<meta property="og:description" content="A practice in two parts: Business Advisory for women entrepreneurs and Intuitive Guidance.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="eighty8 vision">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FAF8F4'/%3E%3Ctext x='16' y='22' font-family='Helvetica,Arial,sans-serif' font-size='18' font-weight='bold' fill='%236B5D4F' text-anchor='middle'%3E88%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@200;300;400;500&family=Karla:wght@200;300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #141414;
+    --body: #585652;
+    --muted: #83807A;
+    --line: #C6C3B9;
+    --accent: #6B5D4F;
+    --pagebg: #E6E4DD;
+    --descbg: #DCD9D2;
+    --paper: #EFEDE9;
+    --mid1: #7A7063;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-padding-top: 185px; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--pagebg);
+    color: var(--body);
+    font-family: 'Karla', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* UMBRELLA NAV (top layer) */
+  .section-nav {
+    background: var(--ink);
+    padding: 10px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 101;
+  }
+  .section-nav-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .section-nav a {
+    font-size: 12px;
+    color: var(--pagebg);
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    cursor: pointer;
+  }
+  .section-nav a:hover { opacity: 1; }
+  .section-nav a.active { opacity: 1; font-weight: 500; }
+
+  /* SECTION-LEVEL NAV (now top-level) */
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    z-index: 100;
+    padding: 16px 24px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  /* Dark nav state for umbrella -- matches the home footer color */
+  nav.nav-dark {
+    background: var(--body);
+    border-bottom-color: var(--body);
+  }
+  nav.nav-dark .brand { color: var(--descbg); }
+  nav.nav-dark .brand::after { background: var(--descbg); opacity: 0.5; }
+  nav.nav-dark .switch-link { color: var(--line); }
+  nav.nav-dark .switch-link:hover { color: var(--pagebg); }
+  nav.nav-dark a { color: var(--line); }
+  nav.nav-dark a:hover { color: var(--pagebg); }
+  /* Mid nav state for IG */
+  nav.nav-mid {
+    background: var(--paper);
+    border-bottom-color: var(--paper);
+  }
+  nav.nav-mid .brand { color: var(--accent); }
+  nav.nav-mid .brand::after { background: var(--accent); opacity: 0.5; }
+  nav.nav-mid .brand-section-label { color: var(--accent); }
+  nav.nav-mid .switch-link { color: var(--accent); }
+  nav.nav-mid .switch-link:hover { color: var(--ink); }
+  nav.nav-mid a { color: var(--accent); }
+  nav.nav-mid a:hover { color: var(--ink); }
+  /* Sandstone nav for BA */
+  nav.nav-sand {
+    background: var(--paper);
+    border-bottom-color: var(--paper);
+  }
+  nav.nav-sand .brand { color: var(--accent); }
+  nav.nav-sand .brand::after { background: var(--accent); }
+  nav.nav-sand a { color: var(--accent); }
+  nav.nav-sand a:hover { color: var(--ink); }
+  nav .nav-inner { max-width: 1000px; margin: 0 auto; }
+  nav .brand-row {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  nav .brand {
+    width: fit-content;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: inline-block;
+    white-space: nowrap;
+  }
+  nav .brand-section-label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-left: 6px;
+  }
+  nav.nav-dark .brand-section-label { color: var(--line); }
+  nav .brand::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+    margin: 5px auto 0;
+  }
+  nav .switch-link .arrow-mobile-hide { display: inline; }
+  @media (max-width: 700px) { nav .switch-link .arrow-mobile-hide { display: none; } }
+  nav .switch-link {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav .switch-link:hover { color: var(--ink); }
+  nav .switch-link.hidden { display: none; }
+  nav .switch-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  nav .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    align-items: center;
+  }
+  nav a {
+    font-size: 13px;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+  nav a:hover { color: var(--ink); }
+
+  /* Sub-nav variants (hidden/shown by JS) */
+  .sub-nav-set { display: none; }
+  .sub-nav-set.active { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; justify-content: flex-end; }
+
+  /* CONTAINER */
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* MEGA SECTIONS (the umbrella-level divisions) */
+
+
+  /* Vertical section label in margin */
+  .vert-section-label {
+    position: fixed;
+    left: 28px;
+    top: 50%;
+    transform: rotate(-90deg) translateX(50%);
+    transform-origin: center center;
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    z-index: 50;
+    display: none;
+    pointer-events: none;
+  }
+  @media (max-width: 900px) {
+    .vert-section-label { display: none !important; }
+  }
+
+
+  /* Alternating section bands */
+  .band-sand {
+    background: var(--descbg);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    padding-left: calc(50vw - 500px + 24px);
+    padding-right: calc(50vw - 500px + 24px);
+  }
+  @media (max-width: 808px) {
+    .band-sand {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+  .band-paper {
+    background: var(--paper);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    padding-left: calc(50vw - 500px + 24px);
+    padding-right: calc(50vw - 500px + 24px);
+  }
+  @media (max-width: 808px) {
+    .band-paper {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+  .mega-section {
+    border-top: none;
+    margin-top: 60px;
+    padding-top: 8px;
+  }
+  .mega-section:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  /* First section inside each mega-section gets tighter top padding */
+  .mega-section > section:first-of-type {
+    padding-top: 24px;
+  }
+  .mega-section:first-of-type > section:first-of-type {
+    padding-top: 80px;
+  }
+  .mega-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  section {
+    padding: 80px 0 60px;
+    border-bottom: none;
+  }
+  section.no-border { border-bottom: none; }
+
+  /* TYPOGRAPHY */
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.2;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  #umbrella h1 {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+  @media (max-width: 600px) {
+    #umbrella h1 { font-size: 38px; }
+  }
+  h2 {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.25;
+    color: var(--accent);
+    margin: 40px 0 20px;
+  }
+  h3 {
+    font-family: 'Karla', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    margin: 32px 0 12px;
+  }
+  h4 {
+    font-family: 'Karla', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    margin: 24px 0 8px;
+  }
+
+  .accent-line {
+    width: 60px;
+    height: 1px;
+    background: var(--accent);
+    margin: 0 0 32px;
+  }
+
+  p { margin: 0 0 16px; color: var(--body); }
+
+  .lead {
+    font-size: 18px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  strong, .bold { color: var(--ink); font-weight: 700; }
+  em { color: var(--ink); font-style: italic; }
+
+  ul {
+    margin: 0 0 16px;
+    padding-left: 22px;
+    color: var(--body);
+  }
+  ul li { margin-bottom: 8px; }
+
+  .divider { height: 1px; background: var(--line); margin: 40px 0; border: none; }
+
+  /* Umbrella landing - natural flow */
+  #umbrella {
+    padding-top: 0 !important;
+    padding-bottom: 60px !important;
+    min-height: calc(100vh - 56px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Hero landing section */
+  .hero-landing {
+    padding: 16px 0 24px;
+  }
+
+  /* Staggered fade-up animation */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(0.5em); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-lead {
+    opacity: 0;
+    animation: rise 0.9s cubic-bezier(.2,.7,.2,1) 0.15s forwards;
+  }
+  .hero-list {
+    opacity: 0;
+    animation: rise 0.9s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .hero-list:nth-child(2) { animation-delay: 0.35s; }
+  .hero-list:nth-child(3) { animation-delay: 0.55s; }
+  .hero-list:nth-child(4) { animation-delay: 0.75s; }
+  .hero-list:nth-child(5) { animation-delay: 0.95s; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-lead, .hero-list { opacity: 1; transform: none; animation: none; }
+  }
+  .hero-lead {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.35;
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+  .hero-list {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--accent);
+    margin: 4px 0;
+  }
+  
+  /* Hero landing section */
+  .hero-landing {
+    padding: 16px 0 24px;
+  }
+
+  /* Staggered fade-up animation */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(0.5em); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-lead {
+    opacity: 0;
+    animation: rise 0.9s cubic-bezier(.2,.7,.2,1) 0.15s forwards;
+  }
+  .hero-list {
+    opacity: 0;
+    animation: rise 0.9s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .hero-list:nth-child(2) { animation-delay: 0.35s; }
+  .hero-list:nth-child(3) { animation-delay: 0.55s; }
+  .hero-list:nth-child(4) { animation-delay: 0.75s; }
+  .hero-list:nth-child(5) { animation-delay: 0.95s; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-lead, .hero-list { opacity: 1; transform: none; animation: none; }
+  }
+  .hero-lead {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--body);
+    margin: 0 0 20px;
+  }
+  .hero-list {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 1.2;
+    color: var(--accent);
+    margin: 4px 0;
+  }
+  
+  /* Landing video strip */
+  .hero-video {
+    margin: 18px 0 0;
+    overflow: hidden;
+    height: 220px;
+    position: relative;
+    border-radius: 16px;
+    -webkit-mask-image: radial-gradient(ellipse 90% 80% at center, black 50%, transparent 100%);
+    mask-image: radial-gradient(ellipse 90% 80% at center, black 50%, transparent 100%);
+  }
+  .hero-video video {
+    width: 100%;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    transform: translateY(-45%);
+  }
+
+  /* Operating principle (replaces hero video) */
+  .hero-principle {
+    margin: 46px 0 0;
+    padding-top: 32px;
+    border-top: 1px solid rgba(217,211,199,0.4);
+    display: grid;
+    grid-template-columns: minmax(160px, 220px) 1fr;
+    gap: 16px 64px;
+    align-items: start;
+  }
+  .hero-principle-label {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 4px 0 0;
+  }
+  .p-lines {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 640px;
+  }
+  .p-lines li {
+    padding-block: 10px;
+    line-height: 1.55;
+    font-size: 17px;
+    color: var(--body);
+  }
+  .p-lines li:first-child {
+    color: var(--ink);
+  }
+  .p-lines li + li {
+    border-top: 1px solid var(--line);
+  }
+  @media (max-width: 700px) {
+    .hero-principle { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* Pair-list: label-left / body-right definition-list grid.
+     Same grid mechanics as the operating principle, without the row rules under every line. */
+  .pair-list {
+    border-top: 1px solid var(--line);
+    margin-top: 32px;
+  }
+  .pair {
+    display: grid;
+    grid-template-columns: minmax(9rem, 16rem) minmax(0, 1fr);
+    gap: 16px 48px;
+    align-items: start;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .pair-label {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.3;
+    color: var(--accent);
+    margin: 4px 0 0;
+  }
+  .pair-label .pair-eyebrow {
+    display: block;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 6px;
+  }
+  .pair-body {
+    max-width: 44rem;
+  }
+  .pair-body p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--body);
+    margin: 0 0 10px;
+  }
+  .pair-body p:last-child { margin-bottom: 0; }
+  @media (max-width: 610px) {
+    .pair { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
+    .pair-label { margin-top: 0; }
+  }
+
+  /* Dark umbrella background */
+  #mega-umbrella .hero-section-dark {
+    background: var(--ink);
+    padding-bottom: 0;
+  }
+  
+  /* Meet Emily inline on landing */
+  .meet-emily-inline {
+    padding: 60px 0 0;
+  }
+  .meet-emily-inline h2 {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--muted);
+    margin: 0 0 4px;
+    letter-spacing: 1px;
+  }
+  .meet-emily-inline .accent-line {
+    display: none;
+  }
+  
+  @media (max-width: 600px) {
+  
+  /* Staggered fade-up animation */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(0.5em); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-lead {
+    opacity: 0;
+    animation: rise 0.9s cubic-bezier(.2,.7,.2,1) 0.15s forwards;
+  }
+  .hero-list {
+    opacity: 0;
+    animation: rise 0.9s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .hero-list:nth-child(2) { animation-delay: 0.35s; }
+  .hero-list:nth-child(3) { animation-delay: 0.55s; }
+  .hero-list:nth-child(4) { animation-delay: 0.75s; }
+  .hero-list:nth-child(5) { animation-delay: 0.95s; }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-lead, .hero-list { opacity: 1; transform: none; animation: none; }
+  }
+  .hero-lead { font-size: 16px; }
+    .hero-list { font-size: 27px; }
+    .meet-emily-inline h2 { font-size: 28px; }
+  }
+  
+  /* Start Here sections fill viewport so next section doesn't peek through */
+  #ba-start {
+    min-height: calc(100vh - 70px);
+  }
+  
+  /* Section buttons on umbrella landing */
+  .section-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 48px 0;
+  }
+  .section-button {
+    padding: 48px 36px;
+    border: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--body);
+    transition: border-color 0.2s, background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+  }
+  .section-button:hover { border-color: var(--accent); background: var(--descbg); }
+  .section-button .card-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .section-button h3 {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: var(--accent);
+    margin: 0 0 24px 0;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .section-button .arrow {
+    margin-top: auto;
+    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .section-button .def-inside {
+    font-size: 11px;
+    line-height: 1.65;
+    color: var(--muted);
+    opacity: 0.85;
+    margin: 0 0 24px;
+    flex: 1;
+    letter-spacing: 0.3px;
+  }
+  @media (max-width: 600px) {
+    .section-buttons { grid-template-columns: 1fr; }
+    .section-button { min-height: 180px; padding: 36px 28px; }
+    .section-button h3 { font-size: 22px; }
+  }
+
+  /* Tagline below buttons */
+  .tagline-wrap {
+    margin-top: 40px;
+    text-align: center;
+  }
+  /* Bracketed style */
+  .tagline-bracketed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .tagline-bracketed .line {
+    width: 40px;
+    height: 1px;
+    background: var(--line);
+  }
+  .tagline-bracketed .text {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--muted);
+    letter-spacing: 0.3px;
+  }
+  /* Masthead style */
+  .tagline-masthead {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  /* About context: bolder weight */
+  .about-intro .tagline-masthead {
+    font-weight: 500;
+  }
+  /* Bio pullquote: Montserrat 16px accent, plain by default */
+  .bio-pullquote {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--accent);
+    margin: 4px 0 24px;
+  }
+  /* Border variant for lead greeting */
+  .bio-pullquote.lead {
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+  }
+  /* Inline dash bookend for pullquote sentences */
+  .bio-pullquote .inline-rule {
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+    vertical-align: middle;
+    margin: 0 10px;
+  }
+  /* Italic + underline emphasis for key phrases inside pullquotes */
+  .em-italic-underline {
+    font-style: italic;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  /* BA statement variant: larger */
+  .tagline-masthead.ba-statement {
+    font-size: 14px;
+  }
+  #ba-about .about-intro > p:not(.bio-pullquote) {
+    margin-top: 16px;
+  }
+  /* BA About: stretch intro column, position Emily here at forehead level, push statement to bottom */
+  #ba-about .about-intro {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 24px;
+  }
+  #ba-about .about-intro > .ba-statement:last-child {
+    margin-top: auto;
+  }
+  /* IG About: match BA layout for equal gaps */
+  #ig-about .about-intro {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 24px;
+  }
+  #ig-about .about-intro > p:not(.bio-pullquote) {
+    margin-top: 16px;
+  }
+  /* IG About: separate the long paragraph from the credentials line */
+  #ig-about .about-intro .tagline-masthead + p {
+    margin-top: 36px;
+  }
+
+  /* About header: portrait left, text column right */
+  .about-header {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    margin: 16px 0 32px;
+    align-items: center;
+  }
+  .about-portrait {
+    width: 260px;
+  }
+  .about-portrait img {
+    width: 100%;
+    display: block;
+  }
+  .about-intro p.lead {
+    margin-top: 0;
+  }
+  @media (max-width: 700px) {
+    .about-header {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .about-portrait {
+      width: 200px;
+      margin: 0 auto;
+    }
+  }
+
+  /* IG Services: no eyebrow, h1 pins directly below nav */
+  #ig-services h1 { top: 80px; padding-top: 14px; padding-bottom: 12px; z-index: 85; }
+  @media (max-width: 600px) { #ig-services h1 { } }
+
+  /* IG Start Here body - slightly larger */
+  .ig-start-body {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--body);
+  }
+  #ig-start .ig-start-body:first-of-type {
+    margin-top: 48px;
+  }
+  @media (max-width: 600px) {
+    .ig-start-body { font-size: 18px; }
+    #ig-start .ig-start-body:first-of-type { margin-top: 32px; }
+  }
+  
+  /* IG Start sticky container - freezes h1 + body copy as a unit */
+  .ig-start-sticky {
+    position: sticky;
+    top: 70px;
+    background: var(--pagebg);
+    z-index: 85;
+    padding: 16px 0 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  @media (max-width: 600px) {
+    .ig-start-sticky { top: 105px; }
+  }
+  
+  /* Booking button - styled like home page section buttons */
+  .booking-button {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 28px;
+    border: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--body);
+    transition: border-color 0.2s, background-color 0.2s;
+    margin: 32px 0;
+    max-width: 360px;
+  }
+  .booking-button:hover {
+    border-color: var(--accent);
+    background: var(--descbg);
+  }
+  .booking-button h3 {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--accent);
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .booking-button .arrow {
+    margin-top: auto;
+    color: var(--accent);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  @media (max-width: 600px) {
+    .booking-button { padding: 24px 20px; }
+    .booking-button h3 { font-size: 18px; }
+  }
+  
+  /* Smaller booking button variant - for repeat placements */
+  .booking-button.small {
+    padding: 20px 24px;
+    max-width: 260px;
+    margin: 24px 0;
+  }
+  .booking-button.small h3 {
+    font-size: 17px;
+    margin: 0 0 10px 0;
+  }
+  .booking-button.small .arrow {
+    font-size: 11px;
+  }
+  @media (max-width: 600px) {
+    .booking-button.small { padding: 16px 18px; }
+    .booking-button.small h3 { font-size: 15px; }
+  }
+  
+  /* IG Services - lighter service sub-headers */
+  .service-block {
+    margin-bottom: 48px;
+  }
+  .service-block:last-child {
+    margin-bottom: 0;
+  }
+  .service-sub-header {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: var(--accent);
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+  }
+  @media (max-width: 600px) {
+    .service-sub-header { font-size: 22px; }
+    .service-block { margin-bottom: 36px; }
+  }
+  
+  /* Condensed indented service list - IG */
+  .service-list {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding-left: 32px;
+    border-left: 1px solid var(--line);
+  }
+  .service-item {
+    margin-bottom: 28px;
+  }
+  .service-item:last-child {
+    margin-bottom: 0;
+  }
+  .service-item-header {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--accent);
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+  }
+  .service-item p {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+  .service-item p:last-child {
+    margin-bottom: 0;
+  }
+  @media (max-width: 600px) {
+    .service-list { padding-left: 16px; margin-top: 32px; margin-bottom: 32px; }
+    .service-item { margin-bottom: 24px; }
+    .service-item-header { font-size: 18px; }
+    .service-item p { font-size: 14px; }
+  }
+  
+  /* Additional Offerings block */
+  .additional-offerings {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  .additional-offerings-header {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--accent);
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+  }
+  .additional-offerings p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .mailto-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .mailto-link:hover {
+    border-bottom-color: var(--accent);
+  }
+  @media (max-width: 600px) {
+    .additional-offerings { margin-top: 40px; padding-top: 24px; }
+    .additional-offerings-header { font-size: 20px; }
+    .additional-offerings p { font-size: 14px; }
+  }
+
+  /* Section footer note - editorial aside with top border */
+  .section-footer-note {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .section-footer-note p {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  /* IG Services intro sticky - freezes h1 + intro + pricing + button as a unit */
+  .ig-services-intro-sticky {
+    position: sticky;
+    top: 70px;
+    background: var(--pagebg);
+    z-index: 85;
+    border-bottom: 1px solid var(--line);
+  }
+  @media (max-width: 600px) {
+    .ig-services-intro-sticky { top: 105px; }
+  }
+  
+  /* HOME H1 SIZE */
+  .home-h1 { font-size: 28px; line-height: 1.2; }
+  @media (min-width: 700px) { .home-h1 { font-size: 32px; } }
+  
+  /* Business Advisory headline - sized to fit one line */
+  #ba-start h1 { font-size: 28px; line-height: 1.2; }
+  @media (min-width: 700px) { #ba-start h1 { font-size: 28px; } }
+  @media (max-width: 600px) { #ba-start h1 { font-size: 22px; } }
+
+  /* INDENT */
+  .indent-sub { padding-left: 32px; }
+  @media (max-width: 700px) { .indent-sub { padding-left: 16px; } }
+
+  /* MODEL LINES */
+  .model-line {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--accent);
+    padding-left: 32px;
+    line-height: 1.6;
+  }
+
+  /* AXIOM */
+  .axiom {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--accent);
+    line-height: 1.7;
+    margin: 24px 0;
+  }
+
+  /* SERVICES */
+  .services-wrapper { position: relative; }
+  /* Advisory Services: tighter spacing */
+  #business-evaluation > h1, #advisory-services > h1 { font-size: 28px; }
+  #advisory-services p { margin: 8px 0; }
+  #advisory-services .service-list { margin-top: 16px; margin-bottom: 16px; }
+  #advisory-services .service-list ul { margin: 6px 0; padding-left: 18px; }
+  #advisory-services .service-list li { margin-bottom: 2px; font-size: 15px; line-height: 1.45; }
+  #advisory-services .service-item { margin-bottom: 20px; }
+
+  .services-sticky-h1 {
+    position: sticky;
+    top: 80px;
+    background: var(--pagebg);
+    z-index: 85;
+    padding: 16px 0 12px;
+    margin: 0 0 8px;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.2;
+    color: var(--accent);
+  }
+  .services-sticky-h1 { background: var(--paper) !important; }
+  .services-sticky-subtitle {
+    display: block;
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--accent);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  .services-sticky-nav-container {
+    position: sticky;
+    top: 80px;
+    background: var(--pagebg);
+    z-index: 90;
+    padding: 24px 0 16px;
+    border-bottom: 1px solid var(--line);
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  .services-sticky-nav-container h1 {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: var(--accent);
+    margin: 0 0 16px 0;
+    padding: 0 24px;
+    line-height: 1.2;
+  }
+  .service-cards-sticky {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 24px;
+  }
+  .card-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+    min-width: 30px;
+    max-width: 140px;
+  }
+  .service-card-mini {
+    padding: 16px 24px;
+    border: 1px solid var(--line);
+    text-decoration: none;
+    text-align: center;
+    transition: border-color 0.2s, background-color 0.2s;
+    min-width: 180px;
+  }
+  .service-card-mini:hover { border-color: var(--accent); background: var(--descbg); }
+  .service-card-mini .service-name {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  @media (max-width: 700px) {
+    .service-cards-sticky { flex-direction: column; gap: 8px; }
+    .card-line { display: none; }
+    .service-card-mini { padding: 10px 12px; width: 100%; }
+    .services-sticky-h1 {
+    position: sticky;
+    top: 80px;
+    background: var(--pagebg);
+    z-index: 85;
+    padding: 16px 0 12px;
+    margin: 0 0 8px;
+    border-bottom: 1px solid var(--line);
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.2;
+    color: var(--accent);
+  }
+
+  .services-sticky-nav-container { padding: 16px 0 12px; }
+    .services-sticky-nav-container h1 { font-size: 28px; margin-bottom: 12px; }
+  }
+
+  /* Service phrases (intuitive guidance) */
+  .service-phrases {
+    margin: 20px 0 8px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .service-phrases .phrase {
+    font-family: 'Spectral', Georgia, serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--accent);
+    margin: 0 0 6px;
+    line-height: 1.4;
+  }
+  .service-phrases .phrase:last-child { margin-bottom: 0; }
+  .service-phrases .phrase.quoted { color: var(--muted); }
+
+  /* Sticky header sections */
+  .sticky-header-section { position: relative; }
+
+  .band-sand.sticky-header-section h1 {
+    background: var(--descbg);
+  }
+  .sticky-header-section h1 {
+    position: sticky;
+    top: 80px;
+    background: var(--pagebg);
+    z-index: 85;
+    padding: 16px 0 12px;
+    margin: 0 0 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .sticky-header-section .accent-line { display: none; }
+  
+  /* Section eyebrow that pins above the h1 as a sticky pair */
+  .section-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+  }
+  .sticky-header-section .section-eyebrow {
+    top: 70px;
+  }
+  /* When section-eyebrow is above a sticky h1, shift the h1 down to sit below the eyebrow */
+  .sticky-header-section .section-eyebrow + h1 {
+    top: 96px;
+    padding-top: 4px;
+  }
+  @media (max-width: 600px) {
+  
+  .band-sand.sticky-header-section h1 {
+    background: var(--descbg);
+  }
+  .sticky-header-section h1 { padding: 16px 0 8px; }
+    .section-eyebrow { top: 105px; }
+    .sticky-header-section .section-eyebrow + h1 { top: 128px; }
+  }
+
+  /* BUSINESS EVAL */
+  .investment-block {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: var(--descbg);
+    display: inline-block;
+  }
+  .investment-block .price {
+    font-family: 'Spectral', Georgia, serif;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .investment-block .accessible-note {
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 16px;
+    color: var(--body);
+  }
+
+  /* Stage cards - condensed indented list */
+  .stages-list {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-left: 32px;
+    border-left: 1px solid var(--line);
+  }
+  .stage-compressed {
+    margin: 0 0 28px 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  .stage-compressed:last-child {
+    margin-bottom: 0;
+  }
+  .stage-compressed .stage-label-compressed {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2px;
+  }
+  .stage-compressed .stage-name-compressed {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .stage-compressed p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--body);
+    margin: 0 0 8px 0;
+  }
+  .stage-compressed p:last-child {
+    margin-bottom: 0;
+  }
+  .stage-compressed br {
+    display: none;
+  }
+  @media (max-width: 600px) {
+    .stages-list { padding-left: 16px; margin-top: 32px; }
+    .stage-compressed { margin-bottom: 24px; }
+    .stage-compressed .stage-name-compressed { font-size: 17px; }
+    .stage-compressed p { font-size: 14px; }
+  }
+
+  /* Framework spacing */
+  #framework p { margin-bottom: 12px; }
+  #framework h3 { margin-top: 20px; margin-bottom: 6px; }
+  #framework .indent-sub { margin-bottom: 8px; }
+  #framework .thesis-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--accent);
+    margin: 32px 0 20px;
+    border: none;
+  }
+
+  /* Business eval styling */
+  #business-evaluation h3 {
+    font-family: 'Spectral', Georgia, serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--accent);
+    margin: 24px 0 8px;
+  }
+  /* Exempt the booking button from #business-evaluation h3 override */
+  #business-evaluation a.booking-button h3 {
+    font-size: 22px;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  #business-evaluation .eval-content { padding-left: 24px; margin-bottom: 16px; }
+  #business-evaluation .eval-content p { margin-bottom: 8px; padding-left: 32px; }
+  #business-evaluation .eval-content ul { padding-left: 56px; margin-bottom: 8px; }
+  #business-evaluation p { margin-bottom: 12px; }
+  #business-evaluation h2 { margin: 24px 0 12px; }
+  #business-evaluation h3 { margin: 16px 0 4px; }
+  #business-evaluation .eval-content { margin-bottom: 12px; }
+  #business-evaluation .eval-content p { margin-bottom: 6px; }
+  #business-evaluation ul { margin-bottom: 6px; }
+  #business-evaluation ul li { margin-bottom: 4px; }
+  
+  /* Investment block at bottom of Business Evaluation */
+  .investment-line {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .investment-line .investment-row {
+    margin-bottom: 8px;
+  }
+  .investment-line .investment-label {
+    font-family: 'Karla', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .investment-line .investment-price {
+    font-size: 16px;
+    color: var(--ink);
+    margin-left: 8px;
+  }
+  .investment-line .accessible-note {
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  /* FAQ */
+  .faq-item { margin-bottom: 28px; }
+  .faq-item .question {
+    font-family: 'Karla', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .faq-item .answer { font-size: 15px; color: var(--body); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* STICKY BOTTOM BAR */
+  .bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--ink);
+    border-top: none;
+    z-index: 100;
+    padding: 11px 24px;
+    transition: background 0.3s;
+  }
+  /* Mid footer state for umbrella */
+  .bottom-bar.footer-mid {
+    background: var(--body);
+  }
+  .bottom-bar-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 16px;
+  }
+  .bottom-bar-brand {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .bottom-bar-tagline {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--pagebg);
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .bottom-bar-brand a {
+    color: var(--pagebg);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .bottom-bar-brand a:hover { color: var(--pagebg); }
+  .bottom-bar-socials {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-self: end;
+  }
+  .bottom-bar-socials a {
+    color: var(--pagebg);
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s;
+  }
+  .bottom-bar-socials a:hover { color: var(--pagebg); }
+  .bottom-bar-socials svg {
+    width: 19px;
+    height: 19px;
+    display: block;
+  }
+  /* Body padding to prevent bottom bar from covering content */
+  body {
+    padding-bottom: 52px;
+  }
+  @media (max-width: 700px) {
+    .bottom-bar-inner { grid-template-columns: 1fr auto; }
+    .bottom-bar-tagline { display: none; }
+  }
+  @media (max-width: 600px) {
+    .bottom-bar { padding: 8px 16px; }
+    .bottom-bar-brand { font-size: 9px; letter-spacing: 1.5px; }
+    body { padding-bottom: 40px; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    h1 { font-size: 28px; }
+    h2 { font-size: 22px; }
+    nav .nav-inner { font-size: 12px; }
+    nav a { font-size: 12px; }
+    section { padding: 56px 0 40px; }
+    .lead { font-size: 16px; }
+  }
+
+  /* Inclusion statements - unified style */
+  .inclusion-statement {
+    font-style: italic;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  .inclusion-note p {
+    font-style: italic;
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  /* Mega-section gradient breath divider */
+  /* Mega-section gradient divider */
+  .mega-divider {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 84px;
+    z-index: 95;
+    padding: 12px 0;
+    background: var(--pagebg);
+    transition: background 0.2s;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+  }
+  .mega-divider .name { background: inherit; }
+  .mega-divider .mega-line {
+    flex: 1;
+    height: 2px;
+    background: #7A7063;
+  }
+
+  @media (max-width: 700px) {
+    #mega-div-ba { top: 108px; }
+    #mega-div-ig { top: 78px; }
+    /* BA sections: h1 below taller nav + BA divider */
+    #mega-business-advisory .sticky-header-section h1 { top: 80px; }
+    #mega-business-advisory .services-sticky-h1 { top: 80px; }
+    /* IG sections: h1 below shorter nav + IG divider */
+    #mega-intuitive-guidance .sticky-header-section h1 { top: 80px; }
+    #mega-intuitive-guidance #ig-services h1 { top: 80px; }
+  }
+  .mega-divider .name {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 8px 24px;
+    white-space: nowrap;
+
+  }
+</style>
+<body>
+
+<!-- SECTION-LEVEL NAV -->
+<nav class="nav-sand">
+  <div class="nav-inner">
+    <div class="brand-row">
+      <span class="brand">EIGHTY8 VISION</span>
+      <div class="switch-links">
+        <a href="index.html" class="switch-link">Home</a>
+        <a href="intuitive-guidance.html" class="switch-link">Intuitive Guidance <span class="arrow-mobile-hide">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="sub-nav-set active" data-set="business-advisory">
+      <a href="business-advisory.html">For Women</a>
+      <a href="ba-services.html">Services</a>
+      <a href="framework.html">The Framework</a>
+      <a href="ba-faq.html">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+<div class="vert-section-label" id="vert-label" style="display:block;">BUSINESS ADVISORY</div>
+
+<main>
+<section id="faq" class="sticky-header-section">
+  <h1>Frequently Asked Questions</h1>
+  <div class="accent-line"></div>
+
+  <div class="faq-item">
+    <div class="question">Why do you focus on the owner's relationship with the business?</div>
+    <div class="answer">Most structural issues start there. How you engage with decisions, control, delegation, and your identity inside the business shapes what it can become. Operational problems typically trace back to a relationship pattern that has not evolved with the stage the business is in, or the one it needs to move into next.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">What kinds of problems can I bring to a session?</div>
+    <div class="answer">Anything related to direction, structure, decision making, capacity, growth constraints, or situations where effort and results do not match.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">What if I don't know what to focus on or bring?</div>
+    <div class="answer">That is enough to begin. Clarifying the problem is part of the work. Many clients arrive with a general sense that something is not working and leave with clear language for what is happening and what needs to change.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">How do you determine what structure my business needs at each stage?</div>
+    <div class="answer">Using the 5-stage framework, I assess operational load, decision distribution, and dependency on the owner. Structure is determined by what the business requires to function at its current stage and what it requires to progress without increasing dependency on you.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Can you help me decide whether to grow, maintain, or scale back?</div>
+    <div class="answer">Yes. That decision is a core part of why I do this. Growth is not the default answer. The right direction depends on capacity, alignment with the life you want, and whether your current structure can actually support what you are considering.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Are sessions in person or virtual?</div>
+    <div class="answer">Virtual. Sessions are held on camera. If you're in the Minneapolis, MN area and want to meet in person, please reach out to me at <a href="mailto:hello@eighty8vision.com" style="color: var(--accent);">hello@eighty8vision.com</a>.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">What if I only want help with a specific issue?</div>
+    <div class="answer">The Business Evaluation will still address it, but it will be evaluated in the context of your overall business. Specific issues are rarely isolated from the structure or how you are operating inside it.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Do I need to be at a certain stage or revenue level to work with you?</div>
+    <div class="answer">No. I have experience across all stages. My approach shifts based on where your business is operating and what it needs to move forward. A proactive investment is far less costly than a reactive investment. I work with owners across all stages of revenue and business development.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Is there an accessible pricing option?</div>
+    <div class="answer">Yes. An adjusted rate is available for businesses generating under $100,000 in annual revenue. Availability is limited and reserved for a small number of businesses at any given time.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="question">Can I work with you if I don't have a business yet?</div>
+    <div class="answer">Yes. In my ideal world, I'd be working with owners at the beginning of their journey. Building clarity, direction, and foundational structure early prevents patterns that are harder and more costly to unwind once the business is in motion.</div>
+  </div>
+</section>
+
+</main>
+
+<div class="bottom-bar">
+  <div class="bottom-bar-inner">
+    <div></div>
+    <div class="bottom-bar-tagline">Your most valuable asset is your energy</div>
+    <div class="bottom-bar-socials">
+      <a href="mailto:hello@eighty8vision.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <polyline points="2,7 12,13 22,7"/>
+        </svg>
+      </a>
+      <a href="https://eighty8vision.as.me/" target="_blank" rel="noopener" aria-label="Book a session">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </a>
+      <a href="https://instagram.com/eighty8.vision" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
